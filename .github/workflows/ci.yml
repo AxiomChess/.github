@@ -6,10 +6,28 @@ on:
   pull_request:
 
 jobs:
-  stub:
+  templates:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: CI stub
-        run: echo "CI stub; product checks land in later tasks"
+      - name: Verify required templates
+        run: |
+          set -euo pipefail
+          test -f .github/PULL_REQUEST_TEMPLATE.md
+          test -f .github/ISSUE_TEMPLATE/config.yml
+          test -f .github/ISSUE_TEMPLATE/bug_report.yml
+          test -f .github/ISSUE_TEMPLATE/feature_request.yml
+          test -f actions/lint-placeholder/action.yml
+          test -f workflow-templates/lint-placeholder.yml
+          test -f workflow-templates/lint-placeholder.properties.json
+          test -f docs/CODEOWNERS.md
+          test -f CODEOWNERS
+          test -f README.md
+          grep -q "no emoji" .github/PULL_REQUEST_TEMPLATE.md
+          grep -q "Co-authored-by" .github/PULL_REQUEST_TEMPLATE.md
+          grep -q "Secrets not staged" .github/PULL_REQUEST_TEMPLATE.md
+          grep -q "AxiomChess/.github/actions/lint-placeholder" README.md
+          echo "template checks OK"
+      - name: Run lint-placeholder action
+        uses: ./actions/lint-placeholder

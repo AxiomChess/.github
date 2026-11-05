@@ -1,0 +1,41 @@
+name: Feature request
+description: Propose a scoped change aligned with the roadmap
+title: "feat: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English only. No emoji. Prefer the smallest change that meets a roadmap acceptance check.
+  - type: dropdown
+    id: repo
+    attributes:
+      label: Repository
+      options:
+        - api
+        - web
+        - analyzer
+        - adapters
+        - design
+        - docs
+        - .github
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+    validations:
+      required: true
+  - type: input
+    id: roadmap
+    attributes:
+      label: Related roadmap task id
+      description: e.g. T07 (optional)
+      placeholder: Txx

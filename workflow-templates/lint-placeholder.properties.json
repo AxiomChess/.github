@@ -1,0 +1,7 @@
+{
+  "name": "AxiomChess lint placeholder",
+  "description": "Thin org lint stub. Replace the action body with real lint when the product repo has scripts.",
+  "iconName": "octicon-checklist",
+  "categories": ["TypeScript", "JavaScript"],
+  "filePatterns": ["package.json$"]
+}

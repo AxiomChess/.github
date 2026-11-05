@@ -1,0 +1,42 @@
+name: Bug report
+description: Report a defect in an AxiomChess product repo
+title: "fix: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English only. No emoji. Do not paste secrets or private game data.
+  - type: dropdown
+    id: repo
+    attributes:
+      label: Repository
+      options:
+        - api
+        - web
+        - analyzer
+        - adapters
+        - design
+        - docs
+        - .github
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction
+      description: Steps or fixture ids. Prefer recorded fixtures over live site calls.
+    validations:
+      required: true

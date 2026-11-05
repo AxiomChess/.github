@@ -1,0 +1,10 @@
+name: lint-placeholder
+description: Thin org-shared lint stub for AxiomChess product repos until real lint lands
+runs:
+  using: composite
+  steps:
+    - name: Lint placeholder
+      shell: bash
+      run: |
+        echo "lint-placeholder: no-op"
+        echo "Product repos should override this job with their package lint script when available."
