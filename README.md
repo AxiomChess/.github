@@ -1,13 +1,27 @@
+<p align="center">
+  <img src="./profile/assets/banner.svg" alt="AxiomChess" width="880" />
+</p>
+
 # .github
 
-Org-level defaults for AxiomChess: issue/PR templates, shared Actions, and workflow templates.
+Org-level defaults for AxiomChess: issue/PR templates, shared Actions, workflow templates, and the **organization homepage** profile.
 
 Language: English only. No emoji.
+
+## Organization homepage
+
+GitHub renders [`profile/README.md`](./profile/README.md) on the org homepage:
+
+**https://github.com/AxiomChess**
+
+Brand assets live under `profile/assets/` (Ink and Felt banner + mark).
 
 ## Contents
 
 | Path | Purpose |
 | --- | --- |
+| `profile/README.md` | Org homepage content |
+| `profile/assets/` | Banner and mark SVGs for the profile |
 | `.github/ISSUE_TEMPLATE/` | Default bug and feature forms for product repos without their own templates |
 | `.github/PULL_REQUEST_TEMPLATE.md` | Default PR body with no-emoji / no-AI-co-author / secrets checklist |
 | `actions/lint-placeholder/` | Composite action stub other repos can call |
